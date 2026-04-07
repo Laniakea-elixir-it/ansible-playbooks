@@ -1,0 +1,8 @@
+---
+- hosts: "{{ target_hosts | default('default') }}"
+  become_user: root
+  become: true
+
+  roles:
+    - role: ansible-role-laniakea-jupyterhub
+      become: yes
