@@ -14,7 +14,7 @@
   version: 3.1.0
 - name: galaxyproject.miniconda
   src: https://github.com/galaxyproject/ansible-miniconda
-  version: 0.3.1
+  version: 0.3.4
 #- src: laniakea.galaxy_interactive_tools
 # - src: usegalaxy_eu.galaxy_systemd
 - name: usegalaxy_eu.certbot

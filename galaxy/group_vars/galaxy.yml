@@ -140,7 +140,7 @@ enable_interactive_tools: false
 miniconda_prefix: '{{ export_dir }}/tool_deps/_conda'
 miniconda_manage_dependencies: true
 galaxy_conda_create_env: true
-miniconda_version: "25.7.0"
+miniconda_version: "26.3.2"
 galaxy_conda_env_channels:
   - conda-forge
   - bioconda
