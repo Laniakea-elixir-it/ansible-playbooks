@@ -1,5 +1,5 @@
 ## python configuration
-galaxy_virtualenv_command: /usr/bin/python3 -m virtualenv
+galaxy_virtualenv_command: /usr/bin/python3.11 -m venv
 
 ##postgresql configuration
 postgresql_version: 18
@@ -138,15 +138,19 @@ enable_interactive_tools: false
 
 # Miniconda
 miniconda_prefix: '{{ export_dir }}/tool_deps/_conda'
-miniconda_manage_dependencies: true
+miniconda_distribution: miniforge
+miniconda_conda_environments:
+  python@3.11:
+    channels:
+      - conda-forge
+      - bioconda
+    packages:
+      - python=3.11
 galaxy_conda_create_env: true
-miniconda_version: "25.7.0"
-galaxy_conda_env_channels:
-  - conda-forge
-  - bioconda
-miniconda_channels:
-  - conda-forge
-  - bioconda
 
 # TUS
 galaxy_tusd_port: 1080
+
+# Gravity restart behaviour, one of: restart, graceful
+# Documentation: https://gravity.readthedocs.io/en/stable/basic_usage.html#managing-a-production-galaxy
+galaxy_gravity_restart_action: restart
