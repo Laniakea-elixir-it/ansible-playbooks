@@ -1,6 +1,6 @@
 - name: galaxyproject.galaxy
   src: https://github.com/galaxyproject/ansible-galaxy
-  version: 0.12.3
+  version: 0.12.9
 - name: galaxyproject.nginx
   src: https://github.com/galaxyproject/ansible-nginx 
   version: 0.7.1
