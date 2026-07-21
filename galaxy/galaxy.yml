@@ -45,10 +45,15 @@
           - sqlite-devel
           - wget
         state: present
+    - name: Download pgdg repository package (RedHat)
+      ansible.builtin.get_url:
+        url: "https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
+        dest: /tmp/pgdg-redhat-repo-latest.noarch.rpm
     - name: Install pgdg repository package (RedHat)
-      yum:
-        name: https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm   
-        disable_gpg_check: True
+      ansible.builtin.dnf:
+        name: /tmp/pgdg-redhat-repo-latest.noarch.rpm
+        state: present
+        disable_gpg_check: true
     - name: '[EL] update ca-certificates'
       command: 'yum update -y ca-certificates'
         #- name: '[EL] Add NGINX repository'
